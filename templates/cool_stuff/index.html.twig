@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ name }}!{% endblock %}
+
+{% block body %}
+  <main class="px-3">
+    <h1>Hello {{ name }}!</h1>
+    {% if eurRate is defined %}
+    <p>Curs EUR: <strong>{{eurRate}}</strong></p>
+    {% endif %}
+    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+    <p class="lead">
+     {% if login %}
+      <a href="{{ path("cool_stuff2", { name: name }) }}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Login {{name}}</a>
+    {% else %}
+      <a href="{{ routePath }}" class="btn btn-lg btn-warning fw-bold border-white bg-white">Cont {{name}}</a>
+    {% endif %}
+    </p>
+  </main>
+{% endblock %}

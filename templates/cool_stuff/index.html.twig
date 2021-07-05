@@ -8,6 +8,10 @@
     {% if eurRate is defined %}
     <p>Curs EUR: <strong>{{eurRate}}</strong></p>
     {% endif %}
+
+    {% if dog is defined %}
+      <img src="{{dog.message}}"/>
+    {% endif %}
     <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
     <p class="lead">
      {% if login %}

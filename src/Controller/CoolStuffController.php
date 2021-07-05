@@ -24,10 +24,15 @@ class CoolStuffController extends AbstractController
     
         $eurRate = $crawler->filterXPath('//default:DataSet/default:Body/default:Cube/default:Rate[@currency="EUR"]/text()')->text();
 
+        
+        $resultDog = file_get_contents("https://dog.ceo/api/breeds/image/random");
+        $dataDog = json_decode($resultDog);
+
         return $this->render('cool_stuff/index.html.twig', [
             'name' => $name,
             'login' => true,
-            'eurRate' => $eurRate
+            'eurRate' => $eurRate,
+            'dog' => $dataDog
         ]);
     }
 
